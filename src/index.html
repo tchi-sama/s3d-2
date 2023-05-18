@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>s3d</title>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body class="bg-gray-100" dir="rtl">
+    <!-- navbar -->
+    <div 
+        id="الرئيسية"
+    ></div>
+
+    <div id="navbarC" class="sticky top-0 bg-[#f3f4f699] backdrop-blur-xl z-50">
+      <div
+        id="list"
+        class="my-12 pt-6 pb-6 mx-auto px-4 container flex justify-around"
+      >
+        <img
+          src="./images/s3dlogo.png"
+          class="w-[50px] scale-125 object-cover"
+          id="logo"
+          alt=""
+        />
+        <ul
+          class="flex gap-4"
+          x-data="{links:['الرئيسية','من نحن','تواصل معنا']}"
+        >
+          <template x-for="link in links">
+            <li>
+              <a
+                x-bind:href="'#'+link"
+                class="font-semibold text-gray-700"
+                x-text="link"
+              ></a>
+            </li>
+          </template>
+        </ul>
+      </div>
+    </div>
+
+    <!-- hero -->
+
+    <div >
+      <div
+        class="container px-10 py-10 mx-auto relative flex flex-row justify-around items-center"
+      >
+        <div class="flex flex-col flex-1 justify-center items-start h-[100%]">
+          <h1 class="text-gray-700 z-10 text-5xl max-w-xl font-semibold">
+            بمعنى أن الغاية هي الشكل وليس المحتوى
+          </h1>
+          <button
+            class="py-2 px-6 border rounded-lg text-white my-6 bg-[#C29F15]"
+          >
+            وليس المحتوى
+          </button>
+        </div>
+        <img
+          src="./images/hero.png"
+          class="w-[60%] opacity-90"
+          alt="hero 3d home"
+        />
+      </div>
+    </div>
+
+    <!-- Services  -->
+
+    <div
+      class="mt-24"
+      x-data="{srvs:
+        [
+            {
+                title:'ناك حقيقة مثبتة منذ زمن طويل وهي أن ',
+                _info:'ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم',
+                image:'./images/srvs/1.png',
+            },
+            {
+                title:'ناك حقيقة مثبتة منذ زمن طويل وهي أن ',
+                _info:'ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم',
+                image:'./images/srvs/2.png',
+            },
+            {
+                title:'ناك حقيقة مثبتة منذ زمن طويل وهي أن ',
+                _info:'ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم',
+                image:'./images/srvs/3.png',
+            },
+            {
+                title:'ناك حقيقة مثبتة منذ زمن طويل وهي أن ',
+                _info:'ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم',
+                image:'./images/srvs/2.png',
+            },
+            {
+                title:'ناك حقيقة مثبتة منذ زمن طويل وهي أن ',
+                _info:'ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم',
+                image:'./images/srvs/1.png',
+            },
+        ]
+    }"
+    >
+      <template x-for="(srv,i) in srvs">
+        <div
+          class="max-w-6xl mx-auto m-2 my-6 rounded-xl overflow-hidden bg-gray-50 shadow-lg"
+        >
+          <div :class="i%2==0?'flex flex-row':'flex flex-row-reverse'">
+            <img class="w-[50%]" :src="srv.image" />
+            <div class="p-4 flex flex-col justify-center gap-3">
+              <div class="flex flex-1 flex-col justify-center">
+                <h3 x-text="srv.title" class="font-semibold py-2"></h3>
+                <p class="text-sm" x-text="srv._info"></p>
+              </div>
+              <div class="flex items-end gap-4">
+                <button
+                  class="py-2 px-6 border rounded-lg text-white bg-[#C29F15]"
+                >
+                  وليس المحتوى
+                </button>
+                <button
+                  class="py-2 px-6 border rounded-lg text-gray-700 bg-white"
+                >
+                  وليس المحتوى
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <script src="./main.js"></script>
+  </body>
+</html>
