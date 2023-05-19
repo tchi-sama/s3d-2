@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>s3d</title>
     <link rel="stylesheet" href="../dist/output.css" />
+    <script defer src="./main.js"></script>
     <script
       defer
       src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
@@ -41,6 +42,7 @@
               ></a>
             </li>
           </template>
+
         </ul>
       </div>
     </div>
@@ -105,7 +107,7 @@
     >
       <template x-for="(srv,i) in srvs">
         <div
-          class="max-w-6xl mx-auto m-2 my-6 rounded-xl overflow-hidden bg-gray-50 shadow-lg"
+          class="hover:scale-[1.02] max-w-6xl mx-auto m-2 my-6 rounded-xl overflow-hidden bg-gray-50 shadow-lg"
         >
           <div :class="i%2==0?'flex flex-row':'flex flex-row-reverse'">
             <img class="w-[50%]" :src="srv.image" />
@@ -137,6 +139,5 @@
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
-    <script src="./main.js"></script>
   </body>
 </html>
